@@ -4,7 +4,7 @@
 
 [View SVG](docs/diagrams/architecture.svg) · [Download PNG](docs/diagrams/architecture.png) · [Edit in draw.io](docs/diagrams/architecture.drawio)
 
-**Find information in the documents a staff member may read, then optionally explain it with cited AI answers.**
+**Help staff find trusted information and get cited AI answers from documents they are allowed to read.**
 
 [The problem](#the-business-problem) · [The solution](#the-solution) · [What was built](#what-was-built) · [Proof it works](#proof-it-works) · [Commands](docs/COMMANDS.md) · [Step by step](#step-by-step)
 
