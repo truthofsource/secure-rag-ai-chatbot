@@ -1,0 +1,49 @@
+test_actual_file_read_is_bounded (test_ledger.LedgerTests.test_actual_file_read_is_bounded) ... ok
+test_bad_request_id_does_not_create_record (test_ledger.LedgerTests.test_bad_request_id_does_not_create_record) ... ok
+test_budget_denial_occurs_before_provider (test_ledger.LedgerTests.test_budget_denial_occurs_before_provider) ... ok
+test_completed_result_and_operation_are_immutable (test_ledger.LedgerTests.test_completed_result_and_operation_are_immutable) ... ok
+test_duplicate_request_never_resubmits (test_ledger.LedgerTests.test_duplicate_request_never_resubmits) ... ok
+test_no_invalid_endpoint_or_redirect_target (test_ledger.LedgerTests.test_no_invalid_endpoint_or_redirect_target) ... ok
+test_not_sent_cost_zero_but_still_counts_daily (test_ledger.LedgerTests.test_not_sent_cost_zero_but_still_counts_daily) ... ok
+test_not_sent_is_terminal (test_ledger.LedgerTests.test_not_sent_is_terminal) ... ok
+test_repeated_same_completion_does_not_duplicate_audit (test_ledger.LedgerTests.test_repeated_same_completion_does_not_duplicate_audit) ... ok
+test_saved_provider_operation_cannot_be_called_not_sent (test_ledger.LedgerTests.test_saved_provider_operation_cannot_be_called_not_sent) ... ok
+test_two_connections_race_only_one_reservation_wins (test_ledger.LedgerTests.test_two_connections_race_only_one_reservation_wins) ... ok
+test_unknown_cannot_be_released_as_not_sent (test_ledger.LedgerTests.test_unknown_cannot_be_released_as_not_sent) ... ok
+test_unknown_survives_reopen_and_blocks_another_caller (test_ledger.LedgerTests.test_unknown_survives_reopen_and_blocks_another_caller) ... ok
+test_uppercase_uuid_settlement_finds_canonical_record (test_ledger.LedgerTests.test_uppercase_uuid_settlement_finds_canonical_record) ... ok
+test_ai_permission_is_separate_from_read (test_pipeline.RagTests.test_ai_permission_is_separate_from_read) ... ok
+test_approved_ocr_import_preserves_page_and_hash (test_pipeline.RagTests.test_approved_ocr_import_preserves_page_and_hash) ... ok
+test_azure_payload_and_no_hidden_paid_retries (test_pipeline.RagTests.test_azure_payload_and_no_hidden_paid_retries) ... ok
+test_bad_ocr_page_rejects_without_replacing_previous_revision (test_pipeline.RagTests.test_bad_ocr_page_rejects_without_replacing_previous_revision) ... ok
+test_chunks_bounded_without_cutting_words (test_pipeline.RagTests.test_chunks_bounded_without_cutting_words) ... ok
+test_file_changed_after_indexing_denies_search (test_pipeline.RagTests.test_file_changed_after_indexing_denies_search) ... ok
+test_general_reachable_restricted_denied (test_pipeline.RagTests.test_general_reachable_restricted_denied) ... ok
+test_import_rejects_unpaired_unicode_without_partial_revision (test_pipeline.RagTests.test_import_rejects_unpaired_unicode_without_partial_revision) ... ok
+test_invalid_audience_and_boolean_rejected (test_pipeline.RagTests.test_invalid_audience_and_boolean_rejected) ... ok
+test_invalid_citation_is_not_disclosed (test_pipeline.RagTests.test_invalid_citation_is_not_disclosed) ... ok
+test_invalid_model_unicode_is_held_and_not_disclosed (test_pipeline.RagTests.test_invalid_model_unicode_is_held_and_not_disclosed) ... ok
+test_invalid_native_encoding_preserves_revision (test_pipeline.RagTests.test_invalid_native_encoding_preserves_revision) ... ok
+test_manifest_structure_and_duplicate_roles_rejected (test_pipeline.RagTests.test_manifest_structure_and_duplicate_roles_rejected) ... ok
+test_matching_missing_source_still_blocks_disclosure (test_pipeline.RagTests.test_matching_missing_source_still_blocks_disclosure) ... ok
+test_new_revision_invalidates_stale_evidence (test_pipeline.RagTests.test_new_revision_invalidates_stale_evidence) ... ok
+test_no_evidence_no_model_or_reservation (test_pipeline.RagTests.test_no_evidence_no_model_or_reservation) ... ok
+test_null_nontext_or_malformed_ocr_page_rejected (test_pipeline.RagTests.test_null_nontext_or_malformed_ocr_page_rejected) ... ok
+test_numeric_reference_is_searchable (test_pipeline.RagTests.test_numeric_reference_is_searchable) ... ok
+test_ocr_hash_and_permission_required (test_pipeline.RagTests.test_ocr_hash_and_permission_required) ... ok
+test_ocr_schema_and_original_format_required (test_pipeline.RagTests.test_ocr_schema_and_original_format_required) ... ok
+test_search_rechecks_before_disclosing_selected_passages (test_pipeline.RagTests.test_search_rechecks_before_disclosing_selected_passages) ... ok
+test_tenant_isolation (test_pipeline.RagTests.test_tenant_isolation) ... ok
+test_token_failure_not_sent_timeout_unknown (test_pipeline.RagTests.test_token_failure_not_sent_timeout_unknown) ... ok
+test_uncited_claim_is_not_disclosed (test_pipeline.RagTests.test_uncited_claim_is_not_disclosed) ... ok
+test_uncited_context_is_also_rechecked (test_pipeline.RagTests.test_uncited_context_is_also_rechecked) ... ok
+test_unrelated_missing_source_does_not_block_matching_evidence (test_pipeline.RagTests.test_unrelated_missing_source_does_not_block_matching_evidence) ... ok
+test_unsearchable_replacement_does_not_publish (test_pipeline.RagTests.test_unsearchable_replacement_does_not_publish) ... ok
+test_valid_cited_answer (test_pipeline.RagTests.test_valid_cited_answer) ... ok
+test_whole_words_no_substring_matching (test_pipeline.RagTests.test_whole_words_no_substring_matching) ... ok
+test_withdraw_during_model_call_denies_output (test_pipeline.RagTests.test_withdraw_during_model_call_denies_output) ... ok
+
+----------------------------------------------------------------------
+Ran 44 tests in 1.744s
+
+OK

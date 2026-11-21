@@ -1,0 +1,14 @@
+[project]
+name = "azure-role-aware-rag-python"
+version = "0.1.0"
+requires-python = ">=3.11"
+description = "Role-aware document retrieval with optional cited Azure answers"
+[tool.ruff]
+line-length = 120
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["rag_project*"]

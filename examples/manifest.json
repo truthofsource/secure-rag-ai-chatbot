@@ -1,0 +1,17 @@
+{
+  "tenant": "fictional",
+  "id": "attendance-instructions",
+  "title": "Fictional attendance instructions",
+  "file": "general.txt",
+  "classification": "General",
+  "roles": [
+    "Admin",
+    "HR",
+    "Payroll",
+    "Supervisor",
+    "Caregiver"
+  ],
+  "ai_allowed": true,
+  "ocr_allowed": false,
+  "reviewed_sha256": "fee43340a37061c970aef4416032a1b4ed1a1963ee80e8397603ff514ba24fc6"
+}

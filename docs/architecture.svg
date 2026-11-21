@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="906" viewBox="0 0 1100 906">
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#46718c"/></marker></defs>
+<rect width="1100" height="906" fill="#f5f8fc"/>
+<text x="550" y="45" text-anchor="middle" font-family="Arial" font-size="27" fill="#17334c" font-weight="bold">Role-aware RAG: evidence before answers</text>
+<text x="550" y="75" text-anchor="middle" font-family="Arial" font-size="16" fill="#496276">Python implementation • Azure calls optional • Local tests + optional Azure services</text>
+<rect x="200" y="110" width="700" height="94" rx="9" fill="white" stroke="#7a9eb6" stroke-width="2"/>
+<circle cx="240" cy="149" r="23" fill="#e1effa"/>
+<text x="240" y="156" text-anchor="middle" font-family="Arial" font-size="21" fill="#245b82">ID</text>
+<text x="282" y="144" font-family="Arial" font-size="21" font-weight="bold" fill="#163c57">1. Reviewed originals + processing policy</text>
+<text x="282" y="176" font-family="Arial" font-size="16" fill="#425d70">General or Restricted; explicit audience and AI/OCR choices.</text>
+<path d="M550,206 V230" stroke="#46718c" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="200" y="236" width="700" height="94" rx="9" fill="white" stroke="#7a9eb6" stroke-width="2"/>
+<circle cx="240" cy="275" r="23" fill="#e1effa"/>
+<text x="240" y="282" text-anchor="middle" font-family="Arial" font-size="21" fill="#245b82">≡</text>
+<text x="282" y="270" font-family="Arial" font-size="21" font-weight="bold" fill="#163c57">2. Python extraction + atomic index</text>
+<text x="282" y="302" font-family="Arial" font-size="16" fill="#425d70">Native text or approved OCR; publish a complete revision.</text>
+<path d="M550,332 V356" stroke="#46718c" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="200" y="362" width="700" height="94" rx="9" fill="white" stroke="#7a9eb6" stroke-width="2"/>
+<circle cx="240" cy="401" r="23" fill="#e1effa"/>
+<text x="240" y="408" text-anchor="middle" font-family="Arial" font-size="21" fill="#245b82">⌕</text>
+<text x="282" y="396" font-family="Arial" font-size="21" font-weight="bold" fill="#163c57">3. Permitted keyword retrieval</text>
+<text x="282" y="428" font-family="Arial" font-size="16" fill="#425d70">Filter tenant/audience before loading matching passages.</text>
+<path d="M550,458 V482" stroke="#46718c" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="200" y="488" width="700" height="94" rx="9" fill="white" stroke="#7a9eb6" stroke-width="2"/>
+<circle cx="240" cy="527" r="23" fill="#e1effa"/>
+<text x="240" y="534" text-anchor="middle" font-family="Arial" font-size="21" fill="#245b82">AI</text>
+<text x="282" y="522" font-family="Arial" font-size="21" font-weight="bold" fill="#163c57">4. Usage admission + Azure answer</text>
+<text x="282" y="554" font-family="Arial" font-size="16" fill="#425d70">Send at most five passages; no tools or automatic paid retry.</text>
+<path d="M550,584 V608" stroke="#46718c" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="200" y="614" width="700" height="94" rx="9" fill="white" stroke="#7a9eb6" stroke-width="2"/>
+<circle cx="240" cy="653" r="23" fill="#e1effa"/>
+<text x="240" y="660" text-anchor="middle" font-family="Arial" font-size="21" fill="#245b82">✓</text>
+<text x="282" y="648" font-family="Arial" font-size="21" font-weight="bold" fill="#163c57">5. Citation and access rechecks</text>
+<text x="282" y="680" font-family="Arial" font-size="16" fill="#425d70">Validate answer IDs and every context source before return.</text>
+<path d="M550,710 V734" stroke="#46718c" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="200" y="740" width="700" height="94" rx="9" fill="white" stroke="#7a9eb6" stroke-width="2"/>
+<circle cx="240" cy="779" r="23" fill="#e1effa"/>
+<text x="240" y="786" text-anchor="middle" font-family="Arial" font-size="21" fill="#245b82">?</text>
+<text x="282" y="774" font-family="Arial" font-size="21" font-weight="bold" fill="#163c57">6. Answer with citations or abstention</text>
+<text x="282" y="806" font-family="Arial" font-size="16" fill="#425d70">Missing evidence means no invented answer; unknown costs stay held.</text>
+</svg>

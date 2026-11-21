@@ -1,0 +1,5 @@
+Fictional attendance instructions
+Report a missed clock event to your assigned supervisor.
+Accepted means the delivery provider accepted the request for processing.
+Delivered means the recipient email service accepted the email.
+Neither status proves inbox placement or that the message was read.
