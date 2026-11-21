@@ -1,14 +1,14 @@
-# Role-Aware Azure RAG with Python
+# Secure RAG AI Chatbot
 
-[![Approved documents to permitted evidence and cited answers](docs/architecture.png)](docs/architecture.svg)
+[![Approved documents to permitted evidence and cited answers](docs/diagrams/architecture.png)](docs/diagrams/architecture.svg)
 
-[View SVG](docs/architecture.svg) · [Download PNG](docs/architecture.png)
+[View SVG](docs/diagrams/architecture.svg) · [Download PNG](docs/diagrams/architecture.png) · [Edit in draw.io](docs/diagrams/architecture.drawio)
 
 **Find information in the documents a staff member may read, then optionally explain it with cited AI answers.**
 
-[Business problem](#the-business-problem) · [Solution](#the-solution) · [What was built](#what-was-built) · [Build your own](#build-one-of-your-own) · [Proof](#proof-it-works)
+[The problem](#the-business-problem) · [The solution](#the-solution) · [What was built](#what-was-built) · [Proof it works](#proof-it-works) · [Commands](docs/COMMANDS.md) · [Step by step](#step-by-step)
 
-## The business problem
+## The Business Problem
 
 Staff need quick answers from current instructions, but a general-purpose
 chatbot may answer from the wrong version or expose restricted information.
@@ -17,7 +17,7 @@ access-control risk. This project narrows answers to explicitly approved
 documents, keeps General and Restricted audiences separate and refuses to
 invent an answer when permitted evidence is missing.
 
-## The solution
+## The Solution
 
 Build three separate paths: prepare approved text, retrieve passages the
 current reader may access, and optionally ask an Azure-hosted model to explain
@@ -25,33 +25,41 @@ those passages with citations. Recheck source versions and access after the
 model returns; source text is evidence, never a new set of instructions or a
 reason to bypass an employee's permissions.
 
-## What was built
 
-- A Python local CLI, fictional General/Restricted instructions and a SQLite
-  source/chunk index with atomic revision publication and withdrawal.
-- Unicode-normalized whole-word keyword retrieval, bounded overlapping chunks,
-  top-five evidence selection and source-hash checks before disclosure.
-- An optional Azure chat-completions adapter with cited JSON answers, abstention,
-  durable usage holds and no automatic paid retries.
-- Explicit OCR-result import from the companion project, tests, Terraform
-  preparation and build instructions for adapting the design to a real service.
+**Business outcome:** Help staff find permitted instructions and explain them with cited answers, without treating every document as available to every reader.
 
-This implementation uses **keyword retrieval**, not embeddings or a vector
-database. Adding vectors is a future design choice; RAG means retrieving
-evidence before generation and does not require a vector service.
+## Tools Used and What They Do
 
-## Build one of your own
+| Tool or service | What it does | Where it fits |
+| --- | --- | --- |
+| Python | Index documents and coordinate answers | Local command-line client |
+| SQLite | Store sources, passages and usage | Local keyword index and ledger |
+| Azure OpenAI | Explain permitted evidence with citations | Optional answer adapter |
+| Entra ID / Azure Identity | Obtain an Azure service token | Optional Azure caller; hosted user validation is separate |
+| Document Intelligence OCR | Supply approved page text for scans | Optional import from the OCR project |
+| Terraform / GitHub Actions | Describe resources and run checks | Infrastructure example and manual tests |
+
+## Step by Step
+
+[Open the standalone build guide](docs/BUILD-YOUR-OWN.md) or follow the same instructions below.
+
+### Prerequisites
+
+Use Python 3.11 or newer and your own fictional test files. Azure and external AI are optional; live examples require your own approved account, network path and reviewed processing costs.
+
+Commands run from your new project root; use PowerShell for the shown environment-variable syntax. Follow the named source files as implementation references without needing to clone a portfolio repository.
+
 
 ### Step 1 — Create the project structure
 
-Create a folder named `azure-role-aware-rag-python` with `rag_project`,
+Create a folder named `secure-rag-ai-chatbot` with `rag_project`,
 `examples`, `tests` and `docs` subfolders. Use the accompanying files as
 implementation references to build each component below, without needing
 to clone an existing repository.
 
 ```powershell
-mkdir azure-role-aware-rag-python
-cd azure-role-aware-rag-python
+mkdir secure-rag-ai-chatbot
+cd secure-rag-ai-chatbot
 python -m venv .venv
 ```
 
@@ -193,7 +201,28 @@ there. Replace local file paths/CLI authority with protected Blob/version reads,
 real scan proofs, category/person rules and an authoritative policy store, then
 test genuine lower-role denials and private paths in an isolated environment.
 
-## Proof it works
+## Architecture
+
+[View the illustrated architecture](docs/diagrams/architecture.svg) · [Edit in draw.io](docs/diagrams/architecture.drawio)
+
+The diagram keeps the local implementation and optional hosted integration boundaries visible. Purpose icons illustrate intent; they do not indicate a completed cloud deployment.
+
+## What Was Built
+
+- A Python local CLI, fictional General/Restricted instructions and a SQLite
+  source/chunk index with atomic revision publication and withdrawal.
+- Unicode-normalized whole-word keyword retrieval, bounded overlapping chunks,
+  top-five evidence selection and source-hash checks before disclosure.
+- An optional Azure chat-completions adapter with cited JSON answers, abstention,
+  durable usage holds and no automatic paid retries.
+- Explicit OCR-result import from the companion project, tests, Terraform
+  preparation and build instructions for adapting the design to a real service.
+
+This implementation uses **keyword retrieval**, not embeddings or a vector
+database. Adding vectors is a future design choice; RAG means retrieving
+evidence before generation and does not require a vector service.
+
+## Proof It Works
 
 Offline tests exercise tenant/role separation, changed-source rejection,
 revision invalidation, withdrawal during generation, all-context rechecks,
@@ -269,13 +298,6 @@ blocks its old index until the reviewed original is restored or reindexed.
 An invalid-Unicode model answer is withheld and its paid request remains held;
 it is not recorded as a successful answer or automatically retried.
 
-## Tools and utilities
-
-Python 3.11+, SQLite, `unittest`, Azure CLI and the optional `azure-identity`
-library provide the local implementation, durable records, tests and keyless
-Azure authentication. GitHub Actions includes a manual offline-test workflow. Local checks run
-without cloud credentials; publishing the repository does not activate Azure services.
-
 ## Runtime and access boundaries
 
 The Python example runs as a **trusted local operator CLI** with SQLite, not as a
@@ -286,7 +308,7 @@ private Blob reader, production queue lease, encryption wrapper, UI or managed
 service deployment wired into this sample. Azure adapters are prepared and
 mock-tested, not exercised against live services in this review.
 
-## Security and privacy
+## Security Practices
 
 Use fictional material first. A matching SHA-256 binds a review to exact bytes;
 it is not a malware verdict or evidence that the document is safe. A production
@@ -307,7 +329,7 @@ needs access protection. Neither `store=false`, Azure hosting nor encryption
 alone establishes HIPAA/SOC 2 compliance or guarantees zero provider retention;
 review applicable service terms, geography and organizational obligations.
 
-## Costs and safe restart
+## Costs and Safe Restart
 
 Local tests and fictional demos make no cloud requests. The optional Azure path
 can incur processing, private-endpoint, DNS, storage and log charges; no resource
@@ -338,7 +360,7 @@ configured otherwise; their allowances and concurrency slots are not a single
 shared Azure budget. A fresh UUID after a completed request represents new
 paid work, so duplicate-ID protection is not content-based deduplication.
 
-## Troubleshooting lessons
+## Troubleshooting Lessons
 
 - **Service or private path unavailable:** inspect resource state, endpoint/DNS,
   credentials and scoped access before changing the file or paying for a retry.
@@ -349,7 +371,7 @@ paid work, so duplicate-ID protection is not content-based deduplication.
 - **File changed:** original bytes, review hash and derived text must agree;
   update the review and index deliberately instead of relabeling old evidence.
 
-## Scaling and tradeoffs
+## Scaling and Tradeoffs
 
 SQLite and local files keep this exercise easy to inspect but are not a
 distributed coordination/security boundary. Measure queue wait, scan delay,
@@ -377,10 +399,23 @@ Email quarantine acceptance does not authorize indexing or AI use, and a badge
 source/portrait is not automatically a RAG document. This package does not connect
 those repositories, import a mailbox automatically or turn job titles into roles.
 
-## Related projects
+## Project Guides
+
+- [Build your own](docs/BUILD-YOUR-OWN.md)
+- [Commands](docs/COMMANDS.md)
+- [Validation and evidence limits](docs/validation.md)
+- [Editable architecture](docs/diagrams/architecture.drawio)
+
+## Cost and Cleanup
+
+Local fixture tests do not call paid providers. Keep optional live settings Off until configured, review infrastructure and processing charges, and retire only resources owned by your lab.
+
+Preserve source files, issued history, revocations and uncertain-request receipts when cleaning up. Do not delete ledgers to bypass holds or run blanket cleanup against a shared environment.
+
+## Related Projects
 
 - [Document OCR with Python](https://github.com/truthofsource/azure-document-ocr-python)
 - [Email document ingestion with Python](https://github.com/truthofsource/azure-document-ingestion-python)
-- [Employee badge generation with Python](https://github.com/truthofsource/employee-badge-generation-python)
+- [AI-Assisted Employee Badge Generation](https://github.com/truthofsource/employee-badge-generation-python)
 
 Publishing this code does not start a service, approve a document or enable paid processing.

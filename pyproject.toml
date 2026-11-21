@@ -1,5 +1,5 @@
 [project]
-name = "azure-role-aware-rag-python"
+name = "secure-rag-ai-chatbot"
 version = "0.1.0"
 requires-python = ">=3.11"
 description = "Role-aware document retrieval with optional cited Azure answers"
