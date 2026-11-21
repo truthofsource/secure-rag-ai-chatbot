@@ -205,7 +205,14 @@ test genuine lower-role denials and private paths in an isolated environment.
 
 [View the illustrated architecture](docs/diagrams/architecture.svg) · [Edit in draw.io](docs/diagrams/architecture.drawio)
 
-The diagram keeps the local implementation and optional hosted integration boundaries visible. Purpose icons illustrate intent; they do not indicate a completed cloud deployment.
+The diagram shows the platform architecture: Azure Static Web Apps and Entra sign-in,
+the Azure Functions API, private Blob originals, Defender-backed scan proofs,
+and Azure SQL policies, leased jobs, passages, usage and audit. Document Intelligence
+reads scanned text; Azure OpenAI separately generates answers from permitted passages.
+
+[Read the platform component map](docs/PLATFORM-ARCHITECTURE.md). The runnable Python
+examples model the core rules locally with SQLite; the diagram does not claim
+that running the examples commissions those hosted components.
 
 ## What Was Built
 

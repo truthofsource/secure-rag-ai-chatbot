@@ -19,3 +19,6 @@ responses and scanner callbacks are simulated in tests. These checks do not
 prove live service quality, genuine malware scanning, authenticated hosted
 access, physical printing, measured cloud costs or full disaster recovery.
 Optional provider calls remain Off unless explicitly selected and configured.
+
+The platform diagram is documentation of the hosted architecture; it does not
+turn the local Python tests into fresh hosted acceptance or activate services.
